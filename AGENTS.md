@@ -97,4 +97,4 @@ powershell -ExecutionPolicy Bypass -File tools\make-og.ps1   # regenerate the sh
 
 ## Privacy
 
-`config.js` holds family names, phone numbers and venues. The site sends `noindex`, and this repository is private. Don't commit source media: reference videos, full-length songs and personal photos are git-ignored by pattern.
+`config.js` holds family names, phone numbers and venues. The site sends `noindex`, but **this repository is public**, so treat everything committed as published. Never commit secrets, and don't commit source media: reference videos, full-length songs and personal photos are git-ignored by pattern.

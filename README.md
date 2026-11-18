@@ -98,7 +98,7 @@ WhatsApp remembers a link's preview. After changing the share picture, add `&v=2
 
 ## Notes
 
-- The page asks search engines not to list it (`noindex`), since it shows family names and phone numbers. Anyone with the link can still open it. Keep this repository private for the same reason.
+- The page asks search engines not to list it (`noindex`), since it shows family names and phone numbers. Anyone with the link can still open it. This repository is public, so the same details in `public/config.js` are visible here too.
 - Animations and falling petals switch off for visitors who've turned on "reduce motion" on their phone.
 - An event's "Add to calendar" button disappears once that event is over, and its countdown turns into a thank-you line.
 - Fonts load from Google Fonts: Great Vibes (names and titles), Cormorant Garamond (text), Josefin Sans (labels), Amiri (Arabic).
