@@ -1,0 +1,12 @@
+{
+  "name": "nimontron",
+  "private": true,
+  "description": "Nimontron: a hand-illustrated digital wedding invitation, served by a Cloudflare Worker",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.164.0"
+  }
+}

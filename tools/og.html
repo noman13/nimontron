@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Renders the 1200×630 link-preview image. Run tools/make-og.ps1 to regenerate public/assets/og-image.png. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Josefin+Sans:wght@400&family=Great+Vibes&display=swap">
+  <link rel="stylesheet" href="../public/styles.css">
+  <style>
+    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: var(--paper) var(--grain); }
+    .og { position: relative; width: 1200px; height: 630px; display: grid; grid-template-columns: 470px 1fr; align-items: center; }
+    .og .art { height: 630px; display: flex; align-items: flex-end; justify-content: center; padding-top: 18px; }
+    .og .art .scene { height: 612px; width: auto; }
+    .og .txt { text-align: center; padding: 0 70px 0 10px; position: relative; z-index: 2; }
+    .og .corner { position: absolute; width: 250px; pointer-events: none; }
+    .og .c1 { top: 0; right: 0; transform: scaleX(-1); }
+    .og .c2 { bottom: 0; right: 0; transform: scale(-1, -1); }
+    .og .eb { font-family: var(--f-sans); font-size: 19px; letter-spacing: .3em; text-transform: uppercase; color: var(--olive); margin: 0; }
+    .og .nm { font-family: var(--f-script); font-size: 118px; line-height: 1.05; color: var(--forest); margin: 18px 0 6px; }
+    .og .nm span { color: var(--sage); font-size: .6em; margin: 0 .12em; }
+    .og .dt { font-family: var(--f-serif); font-size: 36px; color: var(--ink); margin: 8px 0 0; }
+    .og .divider { width: 240px; margin: 26px auto 18px; }
+    .og .inv { font-family: var(--f-script); font-size: 46px; color: var(--olive); margin: 0; }
+  </style>
+</head>
+<body>
+  <div class="og" id="og"></div>
+  <script src="../public/config.js"></script>
+  <script src="../public/art.js"></script>
+  <script>
+    (function () {
+      const C = window.WEDDING, A = window.Art, esc = A.esc;
+      A.ensureDefs();
+      const [a, b] = C.couple.first === 'groom' ? [C.couple.groom, C.couple.bride] : [C.couple.bride, C.couple.groom];
+      const starts = C.events.map((e) => new Date(e.start)).sort((x, y) => x - y);
+      const fmt = (d, o) => new Intl.DateTimeFormat('en-GB', Object.assign({ timeZone: C.timeZone }, o)).format(d);
+      const first = starts[0], last = starts[starts.length - 1];
+      let range = fmt(first, { day: 'numeric', month: 'long', year: 'numeric' });
+      if (starts.length > 1 && fmt(first, { day: 'numeric' }) !== fmt(last, { day: 'numeric' })) {
+        range = fmt(first, { month: 'long' }) === fmt(last, { month: 'long' })
+          ? `${fmt(first, { day: 'numeric' })} – ${fmt(last, { day: 'numeric', month: 'long', year: 'numeric' })}`
+          : `${fmt(first, { day: 'numeric', month: 'long' })} – ${fmt(last, { day: 'numeric', month: 'long', year: 'numeric' })}`;
+      }
+      document.getElementById('og').innerHTML =
+        `<div class="art">${A.archScene()}</div>` +
+        `<div class="txt"><p class="eb">${esc(C.invitation.before)}</p>` +
+        `<p class="nm">${esc(a.short)}<span>&amp;</span>${esc(b.short)}</p>` +
+        `<p class="eb">are getting married</p><p class="dt">${esc(range)}</p>${A.divider()}<p class="inv">You're invited!</p></div>` +
+        A.corner(7, 'c1') + A.corner(11, 'c2');
+      // Shrink the names until they fit, however long they are.
+      const fit = () => {
+        const nm = document.querySelector('.og .nm'), box = document.querySelector('.og .txt');
+        nm.style.whiteSpace = 'nowrap';
+        nm.style.display = 'inline-block';
+        const room = box.clientWidth - 80 - 20; // minus the box's side padding and a little air
+        let size = 112;
+        nm.style.fontSize = size + 'px';
+        while (nm.offsetWidth > room && size > 48) { size -= 2; nm.style.fontSize = size + 'px'; }
+      };
+      fit();
+      if (document.fonts) document.fonts.ready.then(fit);
+    })();
+  </script>
+</body>
+</html>

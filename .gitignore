@@ -1,0 +1,14 @@
+# dependencies and local Cloudflare state
+node_modules/
+.wrangler/
+.dev.vars
+
+# local editor / assistant settings
+.claude/
+
+# source media (reference videos, full-length songs) stay out of the repo;
+# only the trimmed public/assets/music.mp3 is committed
+*.mp4
+/*.mp3
+/*.wav
+/*.m4a
