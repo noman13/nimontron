@@ -54,6 +54,7 @@ The page is plain HTML/CSS/JS with **no build step and no framework**. Scripts l
   - Use a separate browser tab for debug overlays, not the user's tab.
   - Regenerate `og-image.jpg` after any change to names, dates or the couple.
 - **Fix what you notice** (overflow, clipping, contrast) and say so, but keep changes scoped to the request.
+- **Commits:** don't add AI co-author trailers (such as `Co-Authored-By: Claude …`). The owner is the only contributor.
 
 ## Current design decisions (settled through feedback; don't revert)
 

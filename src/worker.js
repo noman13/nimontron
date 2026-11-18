@@ -2,7 +2,7 @@
  * Cloudflare Worker for the wedding invitation.
  *
  *  - Serves the site in ./public
- *  - Personal links (?to=Rahman+Family) get a personalised link-preview title,
+ *  - Personal links (?to=Noman+and+Meehan) get a personalised link-preview title,
  *    and the preview image is given the full address WhatsApp needs.
  */
 

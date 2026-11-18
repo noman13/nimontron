@@ -70,7 +70,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:8787. Add `?open=1` to skip the envelope while editing, or `?to=Rahman+Family` to see a personalised envelope.
+Open http://localhost:8787. Add `?open=1` to skip the envelope while editing, or `?to=Noman+and+Meehan` to see a personalised envelope.
 
 ## Put it online (Cloudflare Workers, free plan is enough)
 
@@ -89,10 +89,10 @@ You can also drag the `public` folder into Cloudflare Pages (or any static host)
 
 ## Sending invitations
 
-Personal link: `https://biyer.nimontron.workers.dev/?to=Rahman+Family` (use `+` or `%20` for spaces). It does three things:
-- shows "Dear Rahman Family" on the envelope
+Personal link: `https://biyer.nimontron.workers.dev/?to=Noman+and+Meehan` (use `+` or `%20` for spaces). It does three things:
+- shows "Dear Noman and Meehan" on the envelope
 - adds the name to the WhatsApp preview title
-- adds "Made with ❤️ for Rahman Family" at the bottom
+- adds "Made with ❤️ for Noman and Meehan" at the bottom
 
 WhatsApp remembers a link's preview. After changing the share picture, add `&v=2` (or any new value) to the link to make it fetch the new one.
 
