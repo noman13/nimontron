@@ -58,12 +58,12 @@ window.WEDDING = {
       mapsUrl: "https://maps.google.com/?q=9R8F+C83+Purbo+Nasirabad+Tintala+Jame+Masjid,+By+Lane+(CNB+Colony+to+District+Police+Head+Quarter,+Chattogram+4000,+Bangladesh&ftid=0x30acd8860d543f15:0xa6134360a936fb61",
     },
     {
-      id: "shooting-club",
-      name: "Metropolitan Shooting Club",
-      address: "Chattogram 4000",
-      phone: "+880 31-633505",
-      mapQuery: "Metropolitan Shooting Club, Chattogram 4000, Bangladesh",
-      mapsUrl: "https://maps.google.com/?q=Metropolitan+Shooting+Club,+Chattogram+4000,+Bangladesh&ftid=0x30acd890cd919479:0x71e08a8a1bf5ffdc",
+      id: "bwa-kindergarten",
+      name: "Bangladesh Women's Association Kindergarten",
+      address: "9R3C+GV5, BWA School Foot Overbridge, Chattogram",
+      phone: "+880 1840-493652",
+      mapQuery: "Bangladesh Women's Association Kindergarten, Chattogram, Bangladesh",
+      mapsUrl: "https://maps.google.com/?q=9R3C+GV5+Bangladesh+Women's+Association+Kindergarten,+BWA+School+Foot+Overbridge,+Chattogram,+Bangladesh&ftid=0x30acd89a06d684b9:0x16f31d2a90f4dc81",
     },
     {
       id: "united",
@@ -112,7 +112,7 @@ window.WEDDING = {
       short: "Mehendi",
       start: "2026-12-10T16:00:00+06:00",
       durationHours: 7,
-      venue: "shooting-club",
+      venue: "bwa-kindergarten",
       program: [
         { time: "4:00 PM", title: "Guest Arrival", icon: "flower" },
         { time: "4:30 PM", title: "Welcome Drinks & Snacks", icon: "drinks" },
